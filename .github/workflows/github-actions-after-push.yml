@@ -1,10 +1,8 @@
 name: GitHub Actions After Push Into Develop Branch
-
 on:
   push:
     branches:
       - develop
-
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
@@ -15,16 +13,16 @@ jobs:
         with:
           ref: develop
 
-      - name: Set up Node.js
+      - name: Install node
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+           node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install Playwright with browsers
-        run: npm install playwright
+      - name: Install Playwright
+        run:  npm install playwright
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run tests 
+        run: npx playwright test. Run npx playwright test
