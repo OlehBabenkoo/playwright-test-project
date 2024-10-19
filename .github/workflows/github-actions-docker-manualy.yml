@@ -1,7 +1,5 @@
-name: GitHub Actions Manually
-
-on:
-  workflow_dispatch:
+name: GitHub Actions Manually with Docker
+on: [workflow_dispatch]
 
 jobs:
   e2e-tests:
