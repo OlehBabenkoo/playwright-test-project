@@ -1,13 +1,9 @@
 name: GitHub Actions Manually with Docker
-
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    services:
-      # Define services if needed, for instance, databases
     
     steps:
       - name: Checkout
@@ -19,4 +15,4 @@ jobs:
       - name: Build and Run Docker image
         run: |
           docker build . -t myapp
-          docker run --rm myapp   
+          docker run --rm myapp
