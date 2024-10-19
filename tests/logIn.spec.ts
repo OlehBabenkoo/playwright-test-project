@@ -5,7 +5,7 @@ import 'dotenv/config'
 
 
 test.describe('Login and Logout test', () => {
-    test.only('Login with \'standard\' user', async ({ page, loginPage}) => {
+    test('Login with \'standard\' user', async ({ page, loginPage}) => {
         await loginPage.open();
         await expect(await page.url()).toContain(await loginPage.getPageUrl());
         await loginPage.logInWithCredentials(Credentials.getUserCredentials(AccountType.Standard));
