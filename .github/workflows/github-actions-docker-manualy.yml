@@ -1,0 +1,22 @@
+name: GitHub Actions Manually
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    services:
+      # Define services if needed, for instance, databases
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and Run Docker image
+        run: |
+          docker build . -t myapp
+          docker run --rm myapp   
