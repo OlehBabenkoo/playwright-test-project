@@ -39,7 +39,7 @@ export default class InventoryPage extends BasePage {
         const inventoryItem = inventoryItems[randomIndex];
 
         const buttonElement = await inventoryItem.$(this.inventoryItemButtonLocator);
-        if (buttonElement && (await buttonElement.innerText()) === 'Add to cart') {
+        if (buttonElement && (await buttonElement.innerText()) === 'Add to cartt') {
             await buttonElement.click();
         } else {
             await this.chooseRandomProductThatHasAddToCardButtonAndClickOn(countOfRandomProduct);
